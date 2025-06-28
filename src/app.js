@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+
 const app = express();
 
 app.use(
@@ -20,4 +21,11 @@ app.use(
   })
 );
 app.use(express.static("public"));
+
+// //router
+import healthcheckrouter from "./routes/healthcheckRoute.js";
+
+// //all router
+
+app.use("/api/v1/healthcheck", healthcheckrouter);
 export { app };
